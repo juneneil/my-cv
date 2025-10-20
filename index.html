@@ -113,16 +113,16 @@
             color: var(--cosmic-pink);
         }
 
-        /* Ultra Glass Effect */
+        /* Enhanced Ultra Glass Effect */
         .ultra-glass {
             background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(25px) saturate(200%);
+            -webkit-backdrop-filter: blur(25px) saturate(200%);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 20px;
             box-shadow: 
                 0 8px 32px rgba(0, 0, 0, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.25),
                 inset 0 -1px 0 rgba(0, 0, 0, 0.2);
             position: relative;
             overflow: hidden;
@@ -135,12 +135,73 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
             transition: var(--transition);
         }
 
         .ultra-glass:hover::before {
             left: 100%;
+        }
+
+        /* NEW: Hyper Glass Effect */
+        .hyper-glass {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(35px) saturate(250%);
+            -webkit-backdrop-filter: blur(35px) saturate(250%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            box-shadow: 
+                0 15px 45px rgba(0, 0, 0, 0.4),
+                inset 0 2px 0 rgba(255, 255, 255, 0.3),
+                inset 0 -2px 0 rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hyper-glass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 150%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+            transform: skewX(-25deg);
+            transition: var(--transition);
+        }
+
+        .hyper-glass:hover::before {
+            left: 150%;
+        }
+
+        /* NEW: Quantum Glass Effect */
+        .quantum-glass {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(40px) saturate(300%);
+            -webkit-backdrop-filter: blur(40px) saturate(300%);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 30px;
+            box-shadow: 
+                0 20px 50px rgba(0, 0, 0, 0.5),
+                inset 0 3px 0 rgba(255, 255, 255, 0.4),
+                inset 0 -3px 0 rgba(0, 0, 0, 0.4),
+                0 0 30px rgba(106, 0, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quantum-glass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -200%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: skewX(-15deg);
+            transition: var(--transition);
+            animation: quantumShine 8s infinite;
         }
 
         /* Button Styles */
@@ -680,6 +741,212 @@
             filter: drop-shadow(0 0 10px rgba(0, 217, 255, 0.7));
         }
 
+        /* Skills Section Styles */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            padding: 30px;
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .skill-category.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-10px);
+        }
+
+        .skill-category h3 {
+            color: var(--cosmic-blue);
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            text-shadow: var(--text-glow);
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tech-item {
+            padding: 8px 16px;
+            background: rgba(0, 217, 255, 0.1);
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+
+        .tech-item:hover {
+            background: rgba(0, 217, 255, 0.2);
+            transform: translateY(-3px);
+            box-shadow: var(--cosmic-glow);
+        }
+
+        /* Testimonials Section Styles */
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .testimonial-card {
+            padding: 40px 30px;
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(50px) rotateX(15deg);
+        }
+
+        .testimonial-card.visible {
+            opacity: 1;
+            transform: translateY(0) rotateX(0);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-15px) scale(1.02);
+        }
+
+        .testimonial-content {
+            text-align: center;
+        }
+
+        .stars {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: gold;
+            filter: drop-shadow(0 0 10px gold);
+        }
+
+        .testimonial-content p {
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            font-size: 2.5rem;
+            filter: drop-shadow(0 0 10px var(--cosmic-blue));
+        }
+
+        .author-info h4 {
+            color: var(--cosmic-blue);
+            margin-bottom: 5px;
+            text-shadow: var(--text-glow);
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin: 0;
+        }
+
+        /* Confetti Container */
+        .confetti-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--cosmic-blue);
+            top: -10px;
+            opacity: 0;
+            animation: confettiFall 5s ease-in-out forwards;
+        }
+
+        .confetti:nth-child(2n) {
+            background: var(--cosmic-purple);
+        }
+
+        .confetti:nth-child(3n) {
+            background: var(--cosmic-pink);
+        }
+
+        .confetti:nth-child(4n) {
+            background: #00ff88;
+        }
+
+        .confetti:nth-child(5n) {
+            background: #ffcc00;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(1);
+                opacity: 1;
+            }
+            80% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg) scale(0.5);
+                opacity: 0;
+            }
+        }
+
+        /* Success Message */
+        .success-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            z-index: 10000;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border: 2px solid var(--cosmic-blue);
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .success-message.active {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: successPulse 2s infinite;
+        }
+
+        @keyframes successPulse {
+            0%, 100% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 10px var(--cosmic-blue));
+            }
+            50% {
+                transform: scale(1.1);
+                filter: drop-shadow(0 0 20px var(--cosmic-purple));
+            }
+        }
+
         /* Contact Section */
         .contact-container {
             display: grid;
@@ -723,50 +990,46 @@
             position: relative;
         }
 
-        .form-input {
+        .contact-form .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .contact-form label {
+            color: var(--cosmic-blue);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-shadow: var(--text-glow);
+        }
+
+        .form-input-simple {
             width: 100%;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
             color: var(--text-light);
             font-size: 1rem;
             transition: var(--transition);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
-        .form-input:focus {
+        .form-input-simple:focus {
             outline: none;
             border-color: var(--cosmic-blue);
-            box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.3);
+            box-shadow: 0 0 0 2px rgba(0, 217, 255, 0.3),
+                        0 4px 20px rgba(0, 217, 255, 0.2);
+            background: rgba(255, 255, 255, 0.15);
         }
 
-        .form-label {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            color: var(--text-light);
-            transition: var(--transition);
-            pointer-events: none;
-            background: var(--cosmic-dark);
-            padding: 0 5px;
-        }
-
-        .form-input:focus + .form-label,
-        .form-input:not(:placeholder-shown) + .form-label {
-            top: -10px;
-            left: 15px;
-            font-size: 0.8rem;
-            color: var(--cosmic-blue);
-            text-shadow: var(--text-glow);
-        }
-
-        textarea.form-input {
-            min-height: 180px;
+        textarea.form-input-simple {
+            min-height: 120px;
             resize: vertical;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
         /* Footer */
         footer {
             padding: 70px 0;
@@ -821,6 +1084,8 @@
             transform: translateY(-8px) rotate(10deg);
             box-shadow: var(--cosmic-glow);
         }
+
+        /* NEW ANIMATIONS AND EFFECTS */
 
         /* Cosmic Particle Animation */
         .cosmic-particles {
@@ -885,6 +1150,504 @@
             filter: blur(10px);
             animation: quantumWave 8s infinite linear;
             z-index: 0;
+        }
+
+        /* Enhanced Galactic Spiral Animation - FIXED */
+        .galactic-spiral {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            opacity: 0.4;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .spiral-arm {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            border: 1.5px solid transparent;
+            transform: translate(-50%, -50%);
+            animation: beautifulSpiralExpand 35s infinite linear;
+            filter: drop-shadow(0 0 8px currentColor);
+        }
+
+        .spiral-arm:nth-child(1) { 
+            animation-delay: 0s; 
+            border-top-color: var(--cosmic-blue);
+            animation-duration: 30s;
+        }
+        .spiral-arm:nth-child(2) { 
+            animation-delay: 4s; 
+            border-right-color: var(--cosmic-purple);
+            animation-duration: 35s;
+        }
+        .spiral-arm:nth-child(3) { 
+            animation-delay: 8s; 
+            border-bottom-color: var(--cosmic-pink);
+            animation-duration: 40s;
+        }
+
+        @keyframes beautifulSpiralExpand {
+            0% {
+                width: 10px;
+                height: 10px;
+                opacity: 0;
+                transform: translate(-50%, -50%) rotate(0deg) scale(0.8);
+                border-width: 1.5px;
+            }
+            15% {
+                opacity: 0.9;
+                transform: translate(-50%, -50%) rotate(45deg) scale(1);
+                border-width: 2px;
+            }
+            30% {
+                opacity: 0.8;
+                transform: translate(-50%, -50%) rotate(90deg) scale(1.2);
+            }
+            50% {
+                opacity: 0.7;
+                transform: translate(-50%, -50%) rotate(180deg) scale(1.4);
+                border-width: 1.5px;
+            }
+            70% {
+                opacity: 0.5;
+                transform: translate(-50%, -50%) rotate(270deg) scale(1.6);
+            }
+            85% {
+                opacity: 0.3;
+                transform: translate(-50%, -50%) rotate(360deg) scale(1.8);
+                border-width: 1px;
+            }
+            100% {
+                width: 80vmin; /* Changed to vmin to stay within viewport */
+                height: 80vmin;
+                opacity: 0;
+                transform: translate(-50%, -50%) rotate(450deg) scale(2);
+                border-width: 0.5px;
+            }
+        }
+
+        /* Enhanced pulsing effect */
+        .spiral-arm::before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: 50%;
+            width: 12px;
+            height: 12px;
+            background: radial-gradient(circle, currentColor, transparent 70%);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            animation: spiralOrbPulse 3s infinite ease-in-out;
+            filter: drop-shadow(0 0 15px currentColor);
+            z-index: 2;
+        }
+
+        @keyframes spiralOrbPulse {
+            0%, 100% {
+                transform: translateX(-50%) scale(1) rotate(0deg);
+                opacity: 1;
+                filter: drop-shadow(0 0 20px currentColor) brightness(1.2);
+            }
+            25% {
+                transform: translateX(-50%) scale(1.3) rotate(90deg);
+                opacity: 0.8;
+                filter: drop-shadow(0 0 25px currentColor) brightness(1.5);
+            }
+            50% {
+                transform: translateX(-50%) scale(1.1) rotate(180deg);
+                opacity: 1;
+                filter: drop-shadow(0 0 30px currentColor) brightness(1.8);
+            }
+            75% {
+                transform: translateX(-50%) scale(1.4) rotate(270deg);
+                opacity: 0.7;
+                filter: drop-shadow(0 0 35px currentColor) brightness(1.3);
+            }
+        }
+
+        /* Add a subtle glow trail */
+        .spiral-arm::after {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: 50%;
+            width: 8px;
+            height: 8px;
+            background: currentColor;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            animation: spiralTrail 2s infinite linear;
+            opacity: 0.4;
+            filter: blur(3px);
+        }
+
+        @keyframes spiralTrail {
+            0% {
+                transform: translateX(-50%) scale(0.8);
+                opacity: 0.3;
+            }
+            50% {
+                transform: translateX(-50%) scale(1.2);
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateX(-50%) scale(0.8);
+                opacity: 0.3;
+            }
+        }
+
+        /* Add a central galaxy core */
+        .galactic-spiral::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(
+                circle,
+                var(--cosmic-blue) 0%,
+                var(--cosmic-purple) 30%,
+                var(--cosmic-pink) 60%,
+                transparent 80%
+            );
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: galaxyCorePulse 8s infinite alternate;
+            filter: blur(5px) drop-shadow(0 0 30px var(--cosmic-purple));
+            z-index: 1;
+        }
+
+        @keyframes galaxyCorePulse {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                filter: blur(5px) drop-shadow(0 0 30px var(--cosmic-purple)) brightness(1);
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1.3);
+                filter: blur(8px) drop-shadow(0 0 50px var(--cosmic-blue)) brightness(1.5);
+            }
+        }
+
+        /* Add subtle background particles */
+        .galactic-spiral .spiral-particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: spiralParticleFloat 20s infinite linear;
+            opacity: 0;
+        }
+
+        @keyframes spiralParticleFloat {
+            0% {
+                transform: rotate(0deg) translateX(0) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            50% {
+                transform: rotate(180deg) translateX(100px) scale(1);
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.1;
+            }
+            100% {
+                transform: rotate(360deg) translateX(200px) scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* NEW: Cosmic Grid Animation */
+        .cosmic-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridMove 20s infinite linear;
+            z-index: 0;
+        }
+
+        /* NEW: Pulsing Stars */
+        .pulsing-star {
+            position: absolute;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 0 10px white;
+            animation: starPulse 3s infinite alternate;
+        }
+
+        /* NEW: Cosmic Portal Effect */
+        .cosmic-portal {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, var(--cosmic-blue), var(--cosmic-purple), var(--cosmic-pink), var(--cosmic-blue));
+            filter: blur(15px);
+            opacity: 0.7;
+            z-index: 1;
+            animation: portalSpin 10s infinite linear;
+        }
+
+        .portal-1 {
+            top: 20%;
+            left: 5%;
+        }
+
+        .portal-2 {
+            bottom: 15%;
+            right: 10%;
+        }
+
+        /* NEW: Meteor Shower */
+        .meteor-shower {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .meteor {
+            position: absolute;
+            width: 2px;
+            height: 50px;
+            background: linear-gradient(to right, transparent, white);
+            filter: drop-shadow(0 0 5px var(--cosmic-blue));
+            animation: meteorFall 5s infinite linear;
+        }
+
+        /* NEW: Quantum Entanglement Effect */
+        .quantum-entanglement {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .entanglement-line {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--cosmic-blue), transparent);
+            animation: entanglementPulse 4s infinite alternate;
+        }
+
+        /* NEW: Enhanced Glass Morphism */
+        .super-glass {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(30px) saturate(200%);
+            -webkit-backdrop-filter: blur(30px) saturate(200%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            box-shadow: 
+                0 12px 40px rgba(0, 0, 0, 0.4),
+                inset 0 2px 0 rgba(255, 255, 255, 0.3),
+                inset 0 -2px 0 rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .super-glass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 150%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: skewX(-25deg);
+            transition: var(--transition);
+        }
+
+        .super-glass:hover::before {
+            left: 150%;
+        }
+
+        /* NEW: Holographic Effect */
+        .holographic {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .holographic::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: hologramScan 6s infinite linear;
+        }
+
+        /* NEW: Quantum Field Animation */
+        .quantum-field {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            opacity: 0.1;
+        }
+
+        .quantum-point {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--cosmic-blue);
+            animation: quantumPointPulse 4s infinite alternate;
+        }
+
+        /* NEW: Cosmic Strings Animation */
+        .cosmic-strings {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .cosmic-string {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--cosmic-purple), transparent);
+            animation: cosmicStringVibrate 8s infinite alternate;
+        }
+
+        /* NEW: Gravity Well Effect */
+        .gravity-well {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle at center, transparent 30%, rgba(106, 0, 255, 0.1) 70%);
+            filter: blur(20px);
+            animation: gravityWellPulse 12s infinite alternate;
+            z-index: 0;
+        }
+
+        /* NEW: Wormhole Effect */
+        .wormhole {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, var(--cosmic-blue), var(--cosmic-purple), var(--cosmic-pink), var(--cosmic-blue));
+            filter: blur(10px);
+            opacity: 0.5;
+            animation: wormholeSpin 15s infinite linear;
+            z-index: 0;
+        }
+
+        /* NEW: Supernova Effect */
+        .supernova {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: radial-gradient(circle at center, white, var(--cosmic-pink), transparent 70%);
+            filter: blur(15px);
+            opacity: 0;
+            animation: supernovaExplode 20s infinite;
+            z-index: 0;
+        }
+
+        .about-text {
+            padding: 20px;
+        }
+
+        .skills-container {
+            margin-top: 15px;
+            gap: 5px;
+        }
+
+        .skill {
+            padding: 10px 15px;
+        }
+
+        .about-content {
+            gap: 40px;
+        }
+
+        /* NEW: Cosmic Dust Animation */
+        .cosmic-dust {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .dust-particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            animation: dustFloat 30s infinite linear;
+        }
+
+        /* NEW: Quantum Ripple Effect */
+        .quantum-ripple {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            animation: rippleExpand 10s infinite linear;
+        }
+
+        /* NEW: Cosmic Aurora Effect */
+        .cosmic-aurora {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            opacity: 0.2;
+        }
+
+        .aurora-band {
+            position: absolute;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(90deg, var(--cosmic-blue), var(--cosmic-purple), var(--cosmic-pink));
+            filter: blur(20px);
+            animation: auroraFlow 25s infinite linear;
         }
 
         /* Animations */
@@ -982,6 +1745,233 @@
             }
         }
 
+        /* NEW ANIMATION KEYFRAMES */
+        @keyframes spiralExpand {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.1;
+            }
+            100% {
+                width: 150vmax;
+                height: 150vmax;
+                opacity: 0;
+            }
+        }
+
+        @keyframes gridMove {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(50px, 50px);
+            }
+        }
+
+        @keyframes starPulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 1;
+            }
+        }
+
+        @keyframes portalSpin {
+            0% {
+                transform: rotate(0deg) scale(1);
+            }
+            50% {
+                transform: rotate(180deg) scale(1.2);
+            }
+            100% {
+                transform: rotate(360deg) scale(1);
+            }
+        }
+
+        @keyframes meteorFall {
+            0% {
+                transform: translateX(-100px) translateY(-100px) rotate(45deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(100vw) translateY(100vh) rotate(45deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes entanglementPulse {
+            0% {
+                opacity: 0.1;
+                width: 0;
+            }
+            50% {
+                opacity: 0.5;
+                width: 100%;
+            }
+            100% {
+                opacity: 0.1;
+                width: 0;
+            }
+        }
+
+        @keyframes hologramScan {
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
+        }
+
+        /* NEW ANIMATION KEYFRAMES */
+        @keyframes quantumShine {
+            0% {
+                left: -200%;
+            }
+            50% {
+                left: 200%;
+            }
+            100% {
+                left: 200%;
+            }
+        }
+
+        @keyframes quantumPointPulse {
+            0% {
+                opacity: 0.1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.8;
+                transform: scale(1.5);
+            }
+            100% {
+                opacity: 0.1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes cosmicStringVibrate {
+            0% {
+                transform: translateY(0) scaleX(1);
+            }
+            25% {
+                transform: translateY(-10px) scaleX(1.2);
+            }
+            50% {
+                transform: translateY(0) scaleX(1);
+            }
+            75% {
+                transform: translateY(10px) scaleX(0.8);
+            }
+            100% {
+                transform: translateY(0) scaleX(1);
+            }
+        }
+
+        @keyframes gravityWellPulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.1;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.3;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0.1;
+            }
+        }
+
+        @keyframes wormholeSpin {
+            0% {
+                transform: rotate(0deg) scale(1);
+            }
+            50% {
+                transform: rotate(180deg) scale(1.3);
+            }
+            100% {
+                transform: rotate(360deg) scale(1);
+            }
+        }
+
+        @keyframes supernovaExplode {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            5% {
+                opacity: 1;
+            }
+            15% {
+                transform: scale(5);
+                opacity: 0.8;
+            }
+            20% {
+                transform: scale(8);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(8);
+                opacity: 0;
+            }
+        }
+
+        @keyframes dustFloat {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.5;
+            }
+            90% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-100px) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes rippleExpand {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 0.5;
+            }
+            100% {
+                width: 100vmax;
+                height: 100vmax;
+                opacity: 0;
+            }
+        }
+
+        @keyframes auroraFlow {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(100px) rotate(180deg);
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+            }
+        }
+
         /* Responsive Styles */
         @media (max-width: 1200px) {
             h1 {
@@ -1024,7 +2014,7 @@
                 left: 25px;
             }
 
-            .black-hole {
+            .black-hole, .cosmic-portal {
                 display: none;
             }
         }
@@ -1102,6 +2092,8 @@
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <button class="theme-toggle" id="themeToggle">🌙</button>
@@ -1141,6 +2133,57 @@
         <!-- Quantum Wave -->
         <div class="quantum-wave"></div>
         
+        <!-- NEW: Galactic Spiral -->
+        <div class="galactic-spiral">
+            <div class="spiral-arm"></div>
+            <div class="spiral-arm"></div>
+            <div class="spiral-arm"></div>
+            <div class="spiral-arm"></div>
+            <div class="spiral-arm"></div>
+        </div>
+        
+        <!-- NEW: Cosmic Grid -->
+        <div class="cosmic-grid"></div>
+        
+        <!-- NEW: Cosmic Portals -->
+        <div class="cosmic-portal portal-1"></div>
+        <div class="cosmic-portal portal-2"></div>
+        
+        <!-- NEW: Meteor Shower -->
+        <div class="meteor-shower" id="meteorShower"></div>
+        
+        <!-- NEW: Quantum Entanglement -->
+        <div class="quantum-entanglement" id="quantumEntanglement"></div>
+        
+        <!-- NEW: Quantum Field -->
+        <div class="quantum-field" id="quantumField"></div>
+        
+        <!-- NEW: Cosmic Strings -->
+        <div class="cosmic-strings" id="cosmicStrings"></div>
+        
+        <!-- NEW: Gravity Well -->
+        <div class="gravity-well"></div>
+        
+        <!-- NEW: Wormholes -->
+        <div class="wormhole" style="top: 30%; left: 10%;"></div>
+        <div class="wormhole" style="bottom: 20%; right: 15%;"></div>
+        
+        <!-- NEW: Supernova -->
+        <div class="supernova" style="top: 60%; left: 80%;"></div>
+        
+        <!-- NEW: Cosmic Dust -->
+        <div class="cosmic-dust" id="cosmicDust"></div>
+        
+        <!-- NEW: Quantum Ripple -->
+        <div class="quantum-ripple" id="quantumRipple"></div>
+        
+        <!-- NEW: Cosmic Aurora -->
+        <div class="cosmic-aurora">
+            <div class="aurora-band" style="top: 20%;"></div>
+            <div class="aurora-band" style="top: 50%;"></div>
+            <div class="aurora-band" style="top: 80%;"></div>
+        </div>
+        
         <!-- Cosmic Particle Animation -->
         <div class="cosmic-particles" id="cosmicParticles"></div>
     </section>
@@ -1150,31 +2193,37 @@
         <div class="container">
             <h2>About The Cosmos</h2>
             <div class="about-content">
-                <div class="about-text ultra-glass">
+                <div class="about-text quantum-glass holographic">
                     <p>I am a visionary developer creating digital experiences that transcend ordinary boundaries. With expertise spanning full-stack development, cybersecurity, and cloud architecture, I build secure, scalable solutions that push technological limits.</p>
                     <p>My approach combines cutting-edge technology with artistic vision, resulting in digital experiences that are both functionally robust and aesthetically stunning.</p>
                     <div class="skills-container">
-                        <span class="skill ultra-glass">Quantum JavaScript</span>
-                        <span class="skill ultra-glass">Nebula React</span>
-                        <span class="skill ultra-glass">Cosmic Node.js</span>
-                        <span class="skill ultra-glass">Python Singularity</span>
-                        <span class="skill ultra-glass">Black Hole Security</span>
-                        <span class="skill ultra-glass">Galactic Cloud</span>
-                        <span class="skill ultra-glass">Quantum Encryption</span>
-                        <span class="skill ultra-glass">Stellar DevOps</span>
-                        <span class="skill ultra-glass">Docker Nebulae</span>
-                        <span class="skill ultra-glass">Kubernetes Clusters</span>
-                        <span class="skill ultra-glass">AWS Cosmos</span>
-                        <span class="skill ultra-glass">Azure Universe</span>
+                        <span class="skill hyper-glass">Quantum JavaScript</span>
+                        <span class="skill hyper-glass">Nebula React</span>
+                        <span class="skill hyper-glass">Cosmic Node.js</span>
+                        <span class="skill hyper-glass">Python Singularity</span>
+                        <span class="skill hyper-glass">Black Hole Security</span>
+                        <span class="skill hyper-glass">Galactic Cloud</span>
+                        <span class="skill hyper-glass">Quantum Encryption</span>
+                        <span class="skill hyper-glass">Stellar DevOps</span>
+                        <span class="skill hyper-glass">Docker Nebulae</span>
+                        <span class="skill hyper-glass">Kubernetes Clusters</span>
+                        <span class="skill hyper-glass">AWS Cosmos</span>
+                        <span class="skill hyper-glass">Azure Universe</span>
                     </div>
                 </div>
                 <div class="about-image">
-                    <div class="image-placeholder ultra-glass">
+                    <div class="image-placeholder quantum-glass holographic">
                         Your Cosmic Portrait
                     </div>
                 </div>
             </div>
         </div>
+        
+        <!-- NEW: Pulsing Stars in About Section -->
+        <div id="aboutStars"></div>
+        
+        <!-- NEW: Quantum Field in About Section -->
+        <div class="quantum-field" id="aboutQuantumField"></div>
     </section>
 
     <!-- Experience Section -->
@@ -1183,7 +2232,7 @@
             <h2>Cosmic Journey</h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-content ultra-glass">
+                    <div class="timeline-content quantum-glass holographic">
                         <div class="timeline-date">2022 - Present</div>
                         <h3>Lead Cosmic Developer</h3>
                         <h4>Quantum Innovations Inc.</h4>
@@ -1191,7 +2240,7 @@
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-content ultra-glass">
+                    <div class="timeline-content quantum-glass holographic">
                         <div class="timeline-date">2020 - 2022</div>
                         <h3>Cybersecurity Astronaut</h3>
                         <h4>Secure Galaxy Ltd.</h4>
@@ -1199,7 +2248,7 @@
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-content ultra-glass">
+                    <div class="timeline-content quantum-glass holographic">
                         <div class="timeline-date">2018 - 2020</div>
                         <h3>Full-Stack Explorer</h3>
                         <h4>Digital Universe Co.</h4>
@@ -1207,7 +2256,7 @@
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-content ultra-glass">
+                    <div class="timeline-content quantum-glass holographic">
                         <div class="timeline-date">2016 - 2018</div>
                         <h3>Junior Space Cadet</h3>
                         <h4>WebTech Nebula</h4>
@@ -1216,6 +2265,12 @@
                 </div>
             </div>
         </div>
+        
+        <!-- NEW: Cosmic Grid in Experience Section -->
+        <div class="cosmic-grid"></div>
+        
+        <!-- NEW: Cosmic Strings in Experience Section -->
+        <div class="cosmic-strings" id="experienceCosmicStrings"></div>
     </section>
 
     <!-- Portfolio Section -->
@@ -1223,7 +2278,7 @@
         <div class="container">
             <h2>Cosmic Creations</h2>
             <div class="portfolio-grid">
-                <div class="portfolio-item ultra-glass">
+                <div class="portfolio-item quantum-glass holographic">
                     <div class="portfolio-img">
                         Quantum Banking System
                     </div>
@@ -1231,13 +2286,13 @@
                         <h3>Quantum Secure Banking</h3>
                         <p>A cosmic banking application with quantum security features including multi-dimensional authentication and entanglement encryption.</p>
                         <div class="portfolio-tags">
-                            <span class="portfolio-tag ultra-glass">Quantum React</span>
-                            <span class="portfolio-tag ultra-glass">Node.js Cosmos</span>
-                            <span class="portfolio-tag ultra-glass">Quantum Security</span>
+                            <span class="portfolio-tag hyper-glass">Quantum React</span>
+                            <span class="portfolio-tag hyper-glass">Node.js Cosmos</span>
+                            <span class="portfolio-tag hyper-glass">Quantum Security</span>
                         </div>
                     </div>
                 </div>
-                <div class="portfolio-item ultra-glass">
+                <div class="portfolio-item quantum-glass holographic">
                     <div class="portfolio-img">
                         Interstellar E-commerce
                     </div>
@@ -1245,13 +2300,13 @@
                         <h3>Galactic Marketplace</h3>
                         <p>An interplanetary e-commerce solution with integrated quantum payment processing and universal security measures.</p>
                         <div class="portfolio-tags">
-                            <span class="portfolio-tag ultra-glass">Vue.js Nebula</span>
-                            <span class="portfolio-tag ultra-glass">Python Quantum</span>
-                            <span class="portfolio-tag ultra-glass">Cosmic Payments</span>
+                            <span class="portfolio-tag hyper-glass">Vue.js Nebula</span>
+                            <span class="portfolio-tag hyper-glass">Python Quantum</span>
+                            <span class="portfolio-tag hyper-glass">Cosmic Payments</span>
                         </div>
                     </div>
                 </div>
-                <div class="portfolio-item ultra-glass">
+                <div class="portfolio-item quantum-glass holographic">
                     <div class="portfolio-img">
                         Universal Security Dashboard
                     </div>
@@ -1259,13 +2314,13 @@
                         <h3>Cosmic Security Monitor</h3>
                         <p>A real-time dashboard for monitoring security threats across multiple galaxies and parallel universes.</p>
                         <div class="portfolio-tags">
-                            <span class="portfolio-tag ultra-glass">React Universe</span>
-                            <span class="portfolio-tag ultra-glass">Quantum WebSockets</span>
-                            <span class="portfolio-tag ultra-glass">Interstellar Security</span>
+                            <span class="portfolio-tag hyper-glass">React Universe</span>
+                            <span class="portfolio-tag hyper-glass">Quantum WebSockets</span>
+                            <span class="portfolio-tag hyper-glass">Interstellar Security</span>
                         </div>
                     </div>
                 </div>
-                <div class="portfolio-item ultra-glass">
+                <div class="portfolio-item quantum-glass holographic">
                     <div class="portfolio-img">
                         Cloud Migration to Cosmos
                     </div>
@@ -1273,14 +2328,22 @@
                         <h3>Universal Cloud Migration</h3>
                         <p>Led migration of planetary systems to cosmic cloud infrastructure with enhanced security and infinite scalability.</p>
                         <div class="portfolio-tags">
-                            <span class="portfolio-tag ultra-glass">AWS Universe</span>
-                            <span class="portfolio-tag ultra-glass">Docker Galaxy</span>
-                            <span class="portfolio-tag ultra-glass">Quantum Security</span>
+                            <span class="portfolio-tag hyper-glass">AWS Universe</span>
+                            <span class="portfolio-tag hyper-glass">Docker Galaxy</span>
+                            <span class="portfolio-tag hyper-glass">Quantum Security</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        
+        <!-- NEW: Nebula in Portfolio Section -->
+        <div class="nebula">
+            <div class="nebula-layer"></div>
+        </div>
+        
+        <!-- NEW: Quantum Ripple in Portfolio Section -->
+        <div class="quantum-ripple" id="portfolioQuantumRipple"></div>
     </section>
 
     <!-- Certifications Section -->
@@ -1288,28 +2351,145 @@
         <div class="container">
             <h2>Cosmic Credentials</h2>
             <div class="certifications-container">
-                <div class="certification-card ultra-glass">
+                <div class="certification-card quantum-glass holographic">
                     <div class="cert-icon">🌌</div>
                     <h3>Certified Quantum Hacker</h3>
                     <p>Quantum Security Council</p>
                 </div>
-                <div class="certification-card ultra-glass">
+                <div class="certification-card quantum-glass holographic">
                     <div class="cert-icon">🪐</div>
                     <h3>Universal Cloud Security</h3>
                     <p>Interstellar Web Services</p>
                 </div>
-                <div class="certification-card ultra-glass">
+                <div class="certification-card quantum-glass holographic">
                     <div class="cert-icon">🚀</div>
                     <h3>Cosmic CISSP</h3>
                     <p>Universal Security Consortium</p>
                 </div>
-                <div class="certification-card ultra-glass">
+                <div class="certification-card quantum-glass holographic">
                     <div class="cert-icon">⭐</div>
                     <h3>Quantum Security+</h3>
                     <p>CompTIA Universe</p>
                 </div>
             </div>
         </div>
+        
+        <!-- NEW: Pulsing Stars in Certifications Section -->
+        <div id="certStars"></div>
+        
+        <!-- NEW: Cosmic Dust in Certifications Section -->
+        <div class="cosmic-dust" id="certCosmicDust"></div>
+    </section>
+
+    <!-- Skills & Technologies Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>Cosmic Skills & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-category quantum-glass holographic">
+                    <h3>🌌 Frontend Universe</h3>
+                    <div class="tech-stack">
+                        <span class="tech-item hyper-glass">Quantum React</span>
+                        <span class="tech-item hyper-glass">Vue.js Nebula</span>
+                        <span class="tech-item hyper-glass">Angular Galaxy</span>
+                        <span class="tech-item hyper-glass">Cosmic CSS</span>
+                        <span class="tech-item hyper-glass">Stellar JavaScript</span>
+                        <span class="tech-item hyper-glass">TypeScript Wormhole</span>
+                    </div>
+                </div>
+                <div class="skill-category quantum-glass holographic">
+                    <h3>🪐 Backend Cosmos</h3>
+                    <div class="tech-stack">
+                        <span class="tech-item hyper-glass">Node.js Universe</span>
+                        <span class="tech-item hyper-glass">Python Singularity</span>
+                        <span class="tech-item hyper-glass">Java Galaxy</span>
+                        <span class="tech-item hyper-glass">Go Nebula</span>
+                        <span class="tech-item hyper-glass">Rust Meteor</span>
+                        <span class="tech-item hyper-glass">SQL Black Hole</span>
+                    </div>
+                </div>
+                <div class="skill-category quantum-glass holographic">
+                    <h3>🔐 Cybersecurity Shield</h3>
+                    <div class="tech-stack">
+                        <span class="tech-item hyper-glass">Quantum Encryption</span>
+                        <span class="tech-item hyper-glass">Blockchain Security</span>
+                        <span class="tech-item hyper-glass">Zero Trust Architecture</span>
+                        <span class="tech-item hyper-glass">Threat Intelligence</span>
+                        <span class="tech-item hyper-glass">Penetration Testing</span>
+                        <span class="tech-item hyper-glass">Incident Response</span>
+                    </div>
+                </div>
+                <div class="skill-category quantum-glass holographic">
+                    <h3>☁️ Cloud Infrastructure</h3>
+                    <div class="tech-stack">
+                        <span class="tech-item hyper-glass">AWS Universe</span>
+                        <span class="tech-item hyper-glass">Azure Cosmos</span>
+                        <span class="tech-item hyper-glass">Google Cloud Galaxy</span>
+                        <span class="tech-item hyper-glass">Docker Containers</span>
+                        <span class="tech-item hyper-glass">Kubernetes Clusters</span>
+                        <span class="tech-item hyper-glass">Terraform Planets</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Background Animations -->
+        <div class="cosmic-grid"></div>
+        <div class="quantum-field" id="skillsQuantumField"></div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <h2>Interstellar Testimonials</h2>
+            <div class="testimonials-container">
+                <div class="testimonial-card quantum-glass holographic">
+                    <div class="testimonial-content">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"Cosmic Developer transformed our digital galaxy with quantum-level security and stellar performance. Their work is truly out of this world!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">🚀</div>
+                            <div class="author-info">
+                                <h4>Nebula CEO</h4>
+                                <p>Quantum Innovations Inc.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card quantum-glass holographic">
+                    <div class="testimonial-content">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"Working with Cosmic Developer was like discovering a new dimension of web development. The security implementations are absolutely impenetrable!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">🛸</div>
+                            <div class="author-info">
+                                <h4>Galaxy CTO</h4>
+                                <p>Secure Universe Ltd.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card quantum-glass holographic">
+                    <div class="testimonial-content">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"The cosmic-level animations and glass effects created an unforgettable user experience. Our engagement metrics went supernova!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">🌠</div>
+                            <div class="author-info">
+                                <h4>Stellar Director</h4>
+                                <p>Digital Cosmos Co.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Background Animations -->
+        <div class="nebula">
+            <div class="nebula-layer"></div>
+        </div>
+        <div id="testimonialStars"></div>
     </section>
 
     <!-- Contact Section -->
@@ -1318,21 +2498,21 @@
             <h2>Contact The Cosmos</h2>
             <div class="contact-container">
                 <div class="contact-info">
-                    <div class="contact-item ultra-glass">
+                    <div class="contact-item quantum-glass holographic">
                         <div class="contact-icon">📡</div>
                         <div>
                             <h3>Quantum Communication</h3>
                             <p>your.quantum.email@cosmos.com</p>
                         </div>
                     </div>
-                    <div class="contact-item ultra-glass">
+                    <div class="contact-item quantum-glass holographic">
                         <div class="contact-icon">🛰️</div>
                         <div>
                             <h3>Satellite Transmission</h3>
                             <p>+1 (555) 321-COSMOS</p>
                         </div>
                     </div>
-                    <div class="contact-item ultra-glass">
+                    <div class="contact-item quantum-glass holographic">
                         <div class="contact-icon">📍</div>
                         <div>
                             <h3>Universal Coordinates</h3>
@@ -1342,24 +2522,33 @@
                 </div>
                 <form class="contact-form">
                     <div class="form-group">
-                        <input type="text" class="form-input ultra-glass" id="name" placeholder=" " required>
-                        <label for="name" class="form-label">Your Cosmic Name</label>
+                        <label for="name">Your Cosmic Name</label>
+                        <input type="text" class="form-input-simple" id="name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-input ultra-glass" id="email" placeholder=" " required>
-                        <label for="email" class="form-label">Quantum Email</label>
+                        <label for="email">Quantum Email</label>
+                        <input type="email" class="form-input-simple" id="email" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-input ultra-glass" id="subject" placeholder=" ">
-                        <label for="subject" class="form-label">Transmission Subject</label>
+                        <label for="subject">Transmission Subject</label>
+                        <input type="text" class="form-input-simple" id="subject">
                     </div>
                     <div class="form-group">
-                        <textarea class="form-input ultra-glass" id="message" placeholder=" " required></textarea>
-                        <label for="message" class="form-label">Your Cosmic Message</label>
+                        <label for="message">Your Cosmic Message</label>
+                        <textarea class="form-input-simple" id="message" required></textarea>
                     </div>
                     <button type="submit" class="cosmic-btn">Transmit Message</button>
                 </form>
             </div>
+        </div>
+        
+        <!-- NEW: Quantum Wave in Contact Section -->
+        <div class="quantum-wave"></div>
+        
+        <!-- NEW: Aurora in Contact Section -->
+        <div class="cosmic-aurora">
+            <div class="aurora-band" style="top: 30%;"></div>
+            <div class="aurora-band" style="top: 70%;"></div>
         </div>
     </section>
 
@@ -1367,20 +2556,27 @@
     <footer>
         <div class="container">
             <div class="social-links">
-                <a href="#" class="social-link ultra-glass">
+                <a href="#" class="social-link quantum-glass">
                     <i>in</i>
                 </a>
-                <a href="#" class="social-link ultra-glass">
+                <a href="#" class="social-link quantum-glass">
                     <i>gh</i>
                 </a>
-                <a href="#" class="social-link ultra-glass">
+                <a href="#" class="social-link quantum-glass">
                     <i>tw</i>
                 </a>
-                <a href="#" class="social-link ultra-glass">
+                <a href="#" class="social-link quantum-glass">
                     <i>fb</i>
                 </a>
             </div>
             <p>&copy; 2023 Cosmic Developer. All Universal Rights Reserved.</p>
+        </div>
+        
+        <!-- NEW: Galactic Spiral in Footer -->
+        <div class="galactic-spiral">
+            <div class="spiral-arm"></div>
+            <div class="spiral-arm"></div>
+            <div class="spiral-arm"></div>
         </div>
     </footer>
 
@@ -1448,8 +2644,17 @@
         setTimeout(type, 1000);
 
         // Cosmic Scroll Reveal Animation
-        const revealElements = document.querySelectorAll('.about-text, .about-image, .timeline-item, .portfolio-item, .certification-card');
-        
+        const revealElements = document.querySelectorAll('.about-text, .about-image, .timeline-item, .portfolio-item, .certification-card, .skill-category, .testimonial-card');
+
+        // Add quantum field for skills section
+        const skillsQuantumField = document.getElementById('skillsQuantumField');
+        for (let i = 0; i < 25; i++) {
+            createQuantumPointForSection(skillsQuantumField);
+        }
+
+        // Add stars for testimonials section
+        createPulsingStars(document.getElementById('testimonialStars'), 12);
+
         const revealOnScroll = () => {
             const windowHeight = window.innerHeight;
             const revealPoint = 150;
@@ -1500,14 +2705,393 @@
         // Create cosmic particles at intervals
         setInterval(createCosmicParticle, 100);
         
-        // Form Submission
-        const contactForm = document.querySelector('.contact-form');
+        // NEW: Meteor Shower Animation
+        const meteorShower = document.getElementById('meteorShower');
         
+        function createMeteor() {
+            const meteor = document.createElement('div');
+            meteor.classList.add('meteor');
+            
+            // Random properties
+            const top = Math.random() * 100;
+            const animationDuration = Math.random() * 5 + 3;
+            const delay = Math.random() * 10;
+            
+            meteor.style.top = `${top}%`;
+            meteor.style.animationDuration = `${animationDuration}s`;
+            meteor.style.animationDelay = `${delay}s`;
+            
+            meteorShower.appendChild(meteor);
+            
+            // Remove meteor after animation completes
+            setTimeout(() => {
+                meteor.remove();
+            }, (animationDuration + delay) * 1000);
+        }
+        
+        // Create meteors at intervals
+        setInterval(createMeteor, 500);
+        
+        // NEW: Quantum Entanglement Animation
+        const quantumEntanglement = document.getElementById('quantumEntanglement');
+        
+        function createEntanglementLine() {
+            const line = document.createElement('div');
+            line.classList.add('entanglement-line');
+            
+            // Random properties
+            const top = Math.random() * 100;
+            const width = Math.random() * 50 + 10;
+            const delay = Math.random() * 5;
+            
+            line.style.top = `${top}%`;
+            line.style.width = `${width}%`;
+            line.style.left = `${Math.random() * 50}%`;
+            line.style.animationDelay = `${delay}s`;
+            
+            quantumEntanglement.appendChild(line);
+            
+            // Remove line after animation completes
+            setTimeout(() => {
+                line.remove();
+            }, (4 + delay) * 1000);
+        }
+        
+        // Create entanglement lines at intervals
+        setInterval(createEntanglementLine, 1000);
+        
+        // NEW: Quantum Field Animation
+        const quantumField = document.getElementById('quantumField');
+        
+        function createQuantumPoint() {
+            const point = document.createElement('div');
+            point.classList.add('quantum-point');
+            
+            // Random properties
+            const top = Math.random() * 100;
+            const left = Math.random() * 100;
+            const delay = Math.random() * 4;
+            const colors = ['#00d9ff', '#6a00ff', '#ff00c8'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            
+            point.style.top = `${top}%`;
+            point.style.left = `${left}%`;
+            point.style.animationDelay = `${delay}s`;
+            point.style.background = color;
+            
+            quantumField.appendChild(point);
+            
+            // Remove point after animation completes
+            setTimeout(() => {
+                point.remove();
+            }, 4000);
+        }
+        
+        // Create quantum points at intervals
+        setInterval(createQuantumPoint, 200);
+        
+        // NEW: Cosmic Strings Animation
+        const cosmicStrings = document.getElementById('cosmicStrings');
+        
+        function createCosmicString() {
+            const string = document.createElement('div');
+            string.classList.add('cosmic-string');
+            
+            // Random properties
+            const top = Math.random() * 100;
+            const width = Math.random() * 30 + 10;
+            const delay = Math.random() * 8;
+            
+            string.style.top = `${top}%`;
+            string.style.width = `${width}%`;
+            string.style.left = `${Math.random() * 70}%`;
+            string.style.animationDelay = `${delay}s`;
+            
+            cosmicStrings.appendChild(string);
+            
+            // Remove string after animation completes
+            setTimeout(() => {
+                string.remove();
+            }, 8000);
+        }
+        
+        // Create cosmic strings at intervals
+        setInterval(createCosmicString, 1500);
+        
+        // NEW: Cosmic Dust Animation
+        const cosmicDust = document.getElementById('cosmicDust');
+        
+        function createDustParticle() {
+            const dust = document.createElement('div');
+            dust.classList.add('dust-particle');
+            
+            // Random properties
+            const size = Math.random() * 3 + 1;
+            const left = Math.random() * 100;
+            const animationDuration = Math.random() * 30 + 20;
+            const colors = ['#ffffff', '#00d9ff', '#6a00ff'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            
+            dust.style.width = `${size}px`;
+            dust.style.height = `${size}px`;
+            dust.style.left = `${left}%`;
+            dust.style.animationDuration = `${animationDuration}s`;
+            dust.style.animationDelay = `${Math.random() * 10}s`;
+            dust.style.background = color;
+            
+            cosmicDust.appendChild(dust);
+            
+            // Remove dust after animation completes
+            setTimeout(() => {
+                dust.remove();
+            }, animationDuration * 1000);
+        }
+        
+        // Create dust particles at intervals
+        setInterval(createDustParticle, 300);
+        
+        // NEW: Quantum Ripple Animation
+        const quantumRipple = document.getElementById('quantumRipple');
+        
+        function createRipple() {
+            const ripple = document.createElement('div');
+            ripple.classList.add('ripple');
+            
+            // Random properties
+            const top = Math.random() * 100;
+            const left = Math.random() * 100;
+            const animationDuration = Math.random() * 10 + 5;
+            
+            ripple.style.top = `${top}%`;
+            ripple.style.left = `${left}%`;
+            ripple.style.animationDuration = `${animationDuration}s`;
+            
+            quantumRipple.appendChild(ripple);
+            
+            // Remove ripple after animation completes
+            setTimeout(() => {
+                ripple.remove();
+            }, animationDuration * 1000);
+        }
+        
+        // Create ripples at intervals
+        setInterval(createRipple, 2000);
+        
+        // NEW: Pulsing Stars for About Section
+        const aboutStars = document.getElementById('aboutStars');
+        
+        function createPulsingStars(container, count) {
+            for (let i = 0; i < count; i++) {
+                const star = document.createElement('div');
+                star.classList.add('pulsing-star');
+                
+                // Random properties
+                const size = Math.random() * 4 + 1;
+                const top = Math.random() * 100;
+                const left = Math.random() * 100;
+                const delay = Math.random() * 3;
+                
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.top = `${top}%`;
+                star.style.left = `${left}%`;
+                star.style.animationDelay = `${delay}s`;
+                
+                container.appendChild(star);
+            }
+        }
+        
+        // Create stars for about and certifications sections
+        createPulsingStars(aboutStars, 20);
+        createPulsingStars(document.getElementById('certStars'), 15);
+        
+        // NEW: Additional Quantum Fields for sections
+        const aboutQuantumField = document.getElementById('aboutQuantumField');
+        for (let i = 0; i < 30; i++) {
+            createQuantumPointForSection(aboutQuantumField);
+        }
+        
+        function createQuantumPointForSection(container) {
+            const point = document.createElement('div');
+            point.classList.add('quantum-point');
+            
+            // Random properties
+            const top = Math.random() * 100;
+            const left = Math.random() * 100;
+            const delay = Math.random() * 4;
+            const colors = ['#00d9ff', '#6a00ff', '#ff00c8'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            
+            point.style.top = `${top}%`;
+            point.style.left = `${left}%`;
+            point.style.animationDelay = `${delay}s`;
+            point.style.background = color;
+            
+            container.appendChild(point);
+        }
+        
+        // NEW: Additional Cosmic Strings for Experience section
+        const experienceCosmicStrings = document.getElementById('experienceCosmicStrings');
+        for (let i = 0; i < 10; i++) {
+            createCosmicStringForSection(experienceCosmicStrings);
+        }
+        
+        function createCosmicStringForSection(container) {
+            const string = document.createElement('div');
+            string.classList.add('cosmic-string');
+            
+            // Random properties
+            const top = Math.random() * 100;
+            const width = Math.random() * 30 + 10;
+            const delay = Math.random() * 8;
+            
+            string.style.top = `${top}%`;
+            string.style.width = `${width}%`;
+            string.style.left = `${Math.random() * 70}%`;
+            string.style.animationDelay = `${delay}s`;
+            
+            container.appendChild(string);
+        }
+        
+        // NEW: Additional Quantum Ripple for Portfolio section
+        const portfolioQuantumRipple = document.getElementById('portfolioQuantumRipple');
+        for (let i = 0; i < 5; i++) {
+            createRippleForSection(portfolioQuantumRipple);
+        }
+        
+        function createRippleForSection(container) {
+            const ripple = document.createElement('div');
+            ripple.classList.add('ripple');
+            
+            // Random properties
+            const top = Math.random() * 100;
+            const left = Math.random() * 100;
+            const animationDuration = Math.random() * 10 + 5;
+            
+            ripple.style.top = `${top}%`;
+            ripple.style.left = `${left}%`;
+            ripple.style.animationDuration = `${animationDuration}s`;
+            
+            container.appendChild(ripple);
+        }
+        
+        // NEW: Additional Cosmic Dust for Certifications section
+        const certCosmicDust = document.getElementById('certCosmicDust');
+        for (let i = 0; i < 20; i++) {
+            createDustParticleForSection(certCosmicDust);
+        }
+        
+        function createDustParticleForSection(container) {
+            const dust = document.createElement('div');
+            dust.classList.add('dust-particle');
+            
+            // Random properties
+            const size = Math.random() * 3 + 1;
+            const left = Math.random() * 100;
+            const animationDuration = Math.random() * 30 + 20;
+            const colors = ['#ffffff', '#00d9ff', '#6a00ff'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            
+            dust.style.width = `${size}px`;
+            dust.style.height = `${size}px`;
+            dust.style.left = `${left}%`;
+            dust.style.animationDuration = `${animationDuration}s`;
+            dust.style.animationDelay = `${Math.random() * 10}s`;
+            dust.style.background = color;
+            
+            container.appendChild(dust);
+        }
+        
+        // Form Submission with Confetti
+        const contactForm = document.querySelector('.contact-form');
+
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Your cosmic message has been transmitted across the universe! I will respond via quantum entanglement.');
+            
+            // Create confetti container
+            const confettiContainer = document.createElement('div');
+            confettiContainer.className = 'confetti-container';
+            document.body.appendChild(confettiContainer);
+            
+            // Create confetti pieces
+            for (let i = 0; i < 150; i++) {
+                createConfettiPiece(confettiContainer);
+            }
+            
+            // Show success message
+            showSuccessMessage();
+            
+            // Remove confetti after animation
+            setTimeout(() => {
+                confettiContainer.remove();
+            }, 5000);
+            
+            // Reset form
             contactForm.reset();
         });
+
+        function createConfettiPiece(container) {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            
+            // Random properties
+            const left = Math.random() * 100;
+            const animationDelay = Math.random() * 3;
+            const animationDuration = Math.random() * 3 + 2;
+            const size = Math.random() * 8 + 6;
+            const shapes = ['circle', 'square', 'triangle'];
+            const shape = shapes[Math.floor(Math.random() * shapes.length)];
+            
+            confetti.style.left = `${left}%`;
+            confetti.style.animationDelay = `${animationDelay}s`;
+            confetti.style.animationDuration = `${animationDuration}s`;
+            confetti.style.width = `${size}px`;
+            confetti.style.height = `${size}px`;
+            
+            // Different shapes
+            if (shape === 'circle') {
+                confetti.style.borderRadius = '50%';
+            } else if (shape === 'triangle') {
+                confetti.style.width = '0';
+                confetti.style.height = '0';
+                confetti.style.borderLeft = `${size/2}px solid transparent`;
+                confetti.style.borderRight = `${size/2}px solid transparent`;
+                confetti.style.borderBottom = `${size}px solid var(--cosmic-blue)`;
+                confetti.style.background = 'none';
+            }
+            
+            container.appendChild(confetti);
+        }
+
+        function showSuccessMessage() {
+            const successMessage = document.createElement('div');
+            successMessage.className = 'success-message quantum-glass';
+            successMessage.innerHTML = `
+                <div class="success-icon">🚀</div>
+                <h3 style="color: var(--cosmic-dark); margin-bottom: 15px;">Message Transmitted!</h3>
+                <p style="color: var(--cosmic-dark);">Your cosmic message has been sent across the universe!<br>I'll respond via quantum entanglement.</p>
+                <button class="cosmic-btn" style="margin-top: 20px;" onclick="this.parentElement.remove()">Awesome!</button>
+            `;
+            
+            document.body.appendChild(successMessage);
+            
+            // Show message with animation
+            setTimeout(() => {
+                successMessage.classList.add('active');
+            }, 100);
+            
+            // Auto-remove after 5 seconds
+            setTimeout(() => {
+                if (successMessage.parentElement) {
+                    successMessage.classList.remove('active');
+                    setTimeout(() => {
+                        if (successMessage.parentElement) {
+                            successMessage.remove();
+                        }
+                    }, 500);
+                }
+            }, 5000);
+        }
 
         // Add interactive background effects on mouse move
         document.addEventListener('mousemove', (e) => {
